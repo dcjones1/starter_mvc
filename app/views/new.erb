@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Create New Task:</h1>
+  <form action="/tasks" method="post">
+    <ul>
+      <li>
+        <label for="task name">Name: </label>
+        <input type="text" name="tasks[name]" placeholder="What do you have to do?">
+      </li>
+      <li>
+        <label for="date">Date: </label>
+        <input type="text" name="tasks[date]" placeholder="When should it be done by?">
+      </li>
+      <li>
+        <label for="status">Status: </label>
+        <select name="tasks[status]">
+          <option value="incomplete">Incomplete</option>
+          <option value="complete">Complete</option>
+        </select>
+      </li>
+      <input class="button" type="submit" value="Submit">
+    </ul>
+  </form>
+</body>
+</html>

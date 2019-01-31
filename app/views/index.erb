@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Task List:</h1>
+  <ul>
+    <% @tasks.each do |t| %>
+    <li><a href="/tasks/<%= t.id %>"><%= t.name %></a></li>
+    <li><%= t.date %></li>
+    <li><%= t.status %></li>
+    <% end %>
+  </ul>
+  <a class="button" href="/tasks/new">Create New Task</a>
+</body>
+</html>

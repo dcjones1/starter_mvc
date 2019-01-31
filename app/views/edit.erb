@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Task:</h1>
+  <ul>
+    <li><%= @task.name %></li>
+    <li><%= @task.date %></li>
+    <li><%= @task.status %></li>
+  </ul>
+  <ul>
+    <form action="/tasks/<%= @task.id %>" method="post">
+      <li>
+        <label for="task name">Name: </label>
+        <input type="text" name="tasks[name]" value=<%= @task.name %>>
+      </li>
+      <li>
+        <label for="date">Date: </label>
+        <input type="text" name="tasks[date]" value=<%= @task.date %>>
+      </li>
+      <li>
+        <label for="status">Status: </label>
+        <select name="tasks[status]">
+          <option value="incomplete">Incomplete</option>
+          <option value="complete">Complete</option>
+        </select>
+      </li>
+      <input type="hidden" name="_method" value="patch">
+      <input class="button" type="submit" value="Save Changes">
+    </form>
+  </ul>
+</body>
+</html>
